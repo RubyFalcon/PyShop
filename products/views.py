@@ -11,3 +11,6 @@ def index(request):
 
 def new(request):
     return HttpResponse("New Products")
+
+def home(request):
+    return render(request, "home.html")
