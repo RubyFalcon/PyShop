@@ -42,7 +42,7 @@ The project is evolving toward a full-stack commerce application with dynamic ca
 
 **Backend**
 - Python  
-- Django 2.1  
+- Django 6.0  
 
 **Frontend**
 - HTML5  
