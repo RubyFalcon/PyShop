@@ -8,9 +8,9 @@ This project is being developed alongside the Programming with Mosh Django cours
 
 ## 🌐 Overview
 
-**PyShop** is a lightweight e-commerce platform that currently allows users to browse products and enables administrators to manage inventory and promotional offers via the Django Admin.
+**PyShop** is a lightweight e-commerce platform that allows users to browse a product catalog and view individual product pages. Administrators can manage products and promotional offers through the Django Admin.
 
-The project is evolving toward a full-stack commerce application with dynamic cart and checkout functionality.
+The project is evolving toward a full-stack commerce application with shopping cart, checkout, and payment functionality.
 
 ---
 
@@ -18,9 +18,17 @@ The project is evolving toward a full-stack commerce application with dynamic ca
 
 ### 🛍️ Storefront
 - Browse products at `/products/`
+- View detailed product pages
+- Product cards linking to detail pages
 - Clean Bootstrap-based responsive UI
 - Homepage with e-commerce layout
-- Product listing powered by Django templates
+- Product listing powered by Django class-based views
+
+### 📦 Product Pages
+- Individual product detail pages
+- Responsive Bootstrap layout
+- Dynamic routing using Django URL patterns
+- Model-based URLs using `get_absolute_url()`
 
 ### 🔐 Admin Management
 - Django Admin enabled
@@ -31,8 +39,10 @@ The project is evolving toward a full-stack commerce application with dynamic ca
 - Simple product and discount management
 
 ### ⚙️ Backend
-- Django MVC architecture
+- Django MTV architecture
+- Class-Based Views (ListView, DetailView)
 - Modular app structure (`products`)
+- URL routing with model `get_absolute_url()`
 - SQLite for local development
 - Virtual environment configured
 
@@ -65,7 +75,7 @@ The project is evolving toward a full-stack commerce application with dynamic ca
 
 
 pyshop/
-├── pyshop/ # Project settings
+├── config/ # Project settings
 ├── products/ # Products app
 ├── manage.py
 └── templates/
@@ -95,7 +105,7 @@ The Django admin has been extended for better product and offer visibility:
 ### 🔍 Product Experience
 - Search and filtering
 - Pagination
-- Product detail enhancements
+- Product detail enhancements (reviews, descriptions, image gallery)
 - Image handling improvements
 
 ### 🎨 Frontend
@@ -109,6 +119,14 @@ The Django admin has been extended for better product and offer visibility:
 - React frontend refactor
 - Full-stack deployment (Render + Postgres)
 
+## 🆕 Recent Improvements
+
+- Refactored views to Django Class-Based Views
+- Added product detail pages
+- Implemented `get_absolute_url()` for product routing
+- Improved Bootstrap product page layout
+- Renamed project configuration module (`pyshop` → `config`)
+
 ---
 
 ### 🚀 Getting Started
@@ -116,7 +134,7 @@ The Django admin has been extended for better product and offer visibility:
 ## 1. Clone the repo
 
 - git clone <your-repo-url>
-- cd pyshop
+- cd PyShop
 
 ## 2. Create and activate virtual environment
 - python3 -m venv .venv
@@ -125,7 +143,10 @@ The Django admin has been extended for better product and offer visibility:
 - pip install -r requirements.txt
 ### 4. Run migrations
 - python manage.py migrate
-### 5. Start development server
+
+### 5.Create an admin user
+- python manage.py createsuperuser
+### 6. Start development server
 - python manage.py runserver
 
 ### Visit:
@@ -133,6 +154,7 @@ The Django admin has been extended for better product and offer visibility:
 - Store: http://127.0.0.1:8000/products/
 
 - Admin: http://127.0.0.1:8000/admin/
+- Login using the superuser credentials created earlier
 
 ### 📌 Status
 
