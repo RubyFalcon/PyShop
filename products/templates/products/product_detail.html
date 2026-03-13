@@ -1,19 +1,18 @@
-{% extends 'base.html' %} {% block content %}
-
-
-    <h1 >{{ product.name }}</h5>
-      <img
-        src="{{ product.image_url }}"
-        alt="{{ product.name }}"
-      />
-      <div>
-        <p >${{ product.price }}</p>
-        <a href="#" class="btn btn-primary">Add to cart</a>
-      </div>
-    </div>
-
-
-
-
+{% extends 'base.html' %} 
+{% block content %}
+<div class="container py-5">
+  <div class="row">
+ <div class="col-md-7">
+      
+    <img src="{{ product.image_url }}" alt="{{ product.name }}" class="img-fluid rounded shadow-sm" />
+   
+ </div>
+ <div class="col-md-5">
+    <h1 class="col-md-5 ps-md-4">{{ product.name }}</h1>
+    <p class="fs-4 fw-bold"></p>${{ product.price }}</p>
+    <a href="#" class="btn btn-primary">Add to cart</a>
+ </div>
+  </div>
+</div>
 
 {% endblock %}
