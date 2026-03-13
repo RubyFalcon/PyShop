@@ -3,6 +3,6 @@ from .views import (
     ProductListView,
     ProductDetailView
 )
-
+app_name= "products"
 urlpatterns = [path('',ProductListView.as_view(), name='product-list' ),
                path("<int:id>/",ProductDetailView.as_view(), name="product-detail" )]
